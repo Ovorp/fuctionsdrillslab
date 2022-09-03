@@ -60,9 +60,11 @@ let greeting = name => {
 function greeting (name) {
   console.log('Hello' ${name})
 }
+
+// ^^ the function above will probably run into an error when trying to console.log.  The ${} notation would need backticks ` ` not single quotes.  example console.log(`Hello ${name}`)  -- Nathan
 greeting(Jake);
 
-
+// ^^ when you are running this function you are passing in a variable named Jake into the function instead of a string. i.e. greeting('Jake') is what I think you were going for --Nathan 
 ////////////////// PROBLEM 5 ////////////////////
 
 /*
@@ -81,11 +83,16 @@ let compareNums = (num1, num2) => {
     return num2
   } else {
     return num1 && num2
+    //This return statement doesn't need the &&, it could have been just return num1 or return num2
+    //&& has its own special rules https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND
+    //As long as both num1 and num2 != 0 it will return num2.  If one of the numbers is zero it will return zero.  If you want to know more let me know --Nathan
   }
 }
 // let compareNums = (num1, num2) => {
 //   return (num1 > num2 ? num1: num2)
 // }
+
+// ^^ Nice --Nathan
 
 ////////////////// PROBLEM 6 ////////////////////
 /*
@@ -99,6 +106,7 @@ let compareNums = (num1, num2) => {
 function add(answer1, answer2){
   answer1 = number(answer1)
   answer2 = number(answer2)
+  // ^^ I'm pretty sure it needs to be Number(), the N should be uppercase.
   return answer1 + answer2
 }
 let sum = add(8, 4);
@@ -216,6 +224,7 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 function printAllNames(namesArr){
   for(i = 0; i < namesArr.length; i++){
     console.log(namesArr)
+    // ^^ This will console.log the array 5 times instead of each name once.  You would want to look into using array[] notation and i from the for loop --Nathan
   }
 }
 printAllNames(namesArr);
@@ -230,12 +239,15 @@ printAllNames(namesArr);
 
 const thatsOdd = (num) => {
   if(num === % 2 == 0 ){
+    // ^^ num === % 2 == 0 will probably get you an error.  You are on the right track but you don't need the === between num and %2. --Nathan
     return "that's not odd!"
   } else {
     return 'that is odd indeed!'
   }
 }
 let oddChecker = thatsOdd(7);
+
+//Let me know if you need any help with the problems below.
 
 
 ////////////////// PROBLEM 14 ////////////////////
